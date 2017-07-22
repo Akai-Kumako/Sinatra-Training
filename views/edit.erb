@@ -1,0 +1,11 @@
+<form method = 'post' action = '/cards/<%= card.id %>'>
+  <input type='text' name='word' value='<%= card.word %>'>
+  <textarea name='description'><%= card.description %></textarea>
+  <input type='hidden' name='_method' value='patch' />
+  <input type='submit' value='単語を更新する'>
+</form>
+
+<form method='post' action='/cards/<%= card.id %>/delete'>
+  <input type='hidden' name='_method' value='delete' />
+  <input type='submit' value='削除'>
+</form>
