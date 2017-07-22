@@ -2,6 +2,15 @@ require 'sinatra'
 require 'sinatra/activerecord'
 require 'sinatra/reloader'
 require './models/card.rb'
+require './models/MyError.rb'
+
+before do
+  content_type :txt
+end
+
+not_found do
+  "エラー　そんなページないで"
+end
 
 get '/' do
   card = Card.first
